@@ -1,0 +1,134 @@
+* {
+	margin: 0;
+	box-sizing: inherit;
+}
+
+body {
+	box-sizing: border-box;
+	color: white;
+	height: 100vh;
+	background-image: linear-gradient(to bottom right, purple, crimson);
+}
+
+.calculator {
+	width: 380px;
+	height: 440px;
+	max-width: 95vw;
+	position: absolute;
+	border-radius: 3px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: .8s zoomIn;
+	transform-origin: bottom right;
+}
+
+.calculator::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+@keyframes zoomIn {
+	0% {
+		left: 0;
+	}
+
+	60% {
+		left: 54%;
+		transform: translate(-50%, -50%) rotate(20deg);
+	}
+
+	100% {
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+}
+
+.display {
+	font-size: 3rem;
+	font-weight: bold;
+	width: 100%;
+	height: 27%;
+	padding: 3rem 1.2rem .5rem 1.2rem;
+	text-align: right;
+	color: white;
+	background-color: transparent;
+	border: none;
+}
+
+.buttons {
+	height: 73%;
+}
+
+.btn {
+	text-align: center;
+	padding-top: 5%;
+	height: 100%;
+	transition: .2s;
+	border: 3px solid white;
+	border-radius: 3px;
+	background-color: transparent;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.btn:hover {	
+	transform: translateY(-4px) scale(1.2);
+	cursor: pointer;
+}
+
+.numbers {
+	float: left;
+	width: 80%;
+	height: 100%;
+	padding: 2px;
+}
+
+.numbers:hover .btn:not(:hover) {
+	transform: scale(.97);
+}
+
+.row {
+	height: calc((100% - 8px) / 5);
+}
+
+.row:not(:last-child) {
+	margin-bottom: 2px;
+}
+
+.row::after {
+	content: "";
+	clear: left;
+	display: table;
+}
+
+.btn-num {
+	float: left;
+	width: calc((100% - 4px) / 3);
+}
+
+.btn-num:not(:last-child) {
+	margin-right: 2px;
+}
+
+.operators {
+	float: right;
+	width: 20%;
+	height: 100%;
+	padding: 2px;
+}
+
+.operators:hover .btn:not(:hover) {
+	transform: scale(.97);
+}
+
+.btn-op {
+	width: 100%;
+	height: calc((100% - 8px) / 5);
+	padding-top: 23%;
+}
+
+.btn-op:not(:last-child) {
+	margin-bottom: 2px;
+}
