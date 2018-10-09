@@ -19,7 +19,8 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	animation: .8s zoomIn;
+	animation: .8s zoomIn backwards;
+	animation-delay: .2s;
 	transform-origin: bottom right;
 }
 
